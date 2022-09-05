@@ -91,12 +91,17 @@ class _HomeState extends State<Home> {
                         var valor = snapshot.data!["results"][_search.toUpperCase()]["price"];
                         var codigo = snapshot.data!["results"][_search.toUpperCase()]["symbol"];
                         codigo = codigo + ' - ' +  snapshot.data!["results"][_search.toUpperCase()]["company_name"];
-                        return Column(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: <Widget>[
-                              Text (codigo),
-                              Text('R\$ $valor'),
-                            ]
+                        return Container(
+                          width: 200.0,
+                          height: 200.0,
+                          color: Colors.amber,
+                          child: Column(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: <Widget>[
+                                Text (codigo),
+                                Text('R\$ $valor'),
+                              ]
+                          ),
                         );
 
                       } else {
